@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','WebController@index');
 
 Route::group(array('prefix'=>'admin','middleware'=>'auth.admin'),function(){
 	Route::get('/','AdminController@index');
@@ -27,6 +25,7 @@ Route::post('auth/login','Auth\AuthController@proses_login');
 
 Route::get('registrasi','RegistrasiController@index');
 Route::post('registrasi','RegistrasiController@proses');
+
 
 /*
 |--------------------------------------------------------------------------
